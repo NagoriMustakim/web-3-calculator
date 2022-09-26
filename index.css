@@ -1,0 +1,131 @@
+.title {
+    color: rgb(6, 81, 221);
+    width: fit-content;
+    background-color: rgb(123, 146, 165);
+    margin: auto;
+    border-radius: 25px;
+    padding: 8px 30px 8px 30px;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.789);
+}
+
+@media (min-width: 310px) and (max-width: 369px) {
+    .title {
+        color: rgb(6, 81, 221);
+        width: fit-content;
+        background-color: rgb(123, 146, 165);
+        margin: auto;
+        border-radius: 19px;
+        padding: 3px;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 368px) and (max-width: 457px) {
+    .title {
+        color: rgb(6, 81, 221);
+        width: fit-content;
+        background-color: rgb(123, 146, 165);
+        margin: auto;
+        border-radius: 19px;
+        padding: 3px;
+        font-size: 30px;
+    }
+
+}
+
+@media (min-width: 230px) and (max-width: 309px) {
+    .title {
+        color: rgb(6, 81, 221);
+        /* width: fit-content; */
+        background-color: rgb(123, 146, 165);
+        margin: auto;
+        border-radius: 10px;
+        font-size: 17px;
+        /* padding: 0px 0px 8px 30px; */
+        padding: 10px;
+    }
+}
+
+.btn button {
+    margin-top: 12px;
+    background-color: rgb(166, 166, 234);
+    width: fit-content;
+    font-size: 30px;
+    color: rgb(2, 2, 2);
+    font-weight: bold;
+    border-radius: 13px;
+    padding: 7px;
+    position: absolute;
+    left: 75%;
+}
+
+.btn :hover {
+    background: rgb(165, 187, 219);
+    color: aliceblue;
+}
+
+.container {
+    width: fit-content;
+    margin: auto;
+    background-color: cyan;
+    margin-top: 50px;
+    border: 2px solid black;
+    border-radius: 13px;
+}
+
+.row {
+    margin: 10px;
+    padding: 6px;
+}
+
+.row button {
+    padding: 10px;
+    margin: 10px;
+    /* background-color: rgb(163, 166, 169); */
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.input {
+    background-color: rgb(158, 179, 230);
+    width: 242px;
+    border-radius: 8px;
+    margin: 7px;
+    height: 20px;
+    font-size: 17px;
+}
+
+.suggestion {
+    font-size: 20px;
+    color: rgb(219, 65, 65);
+}
+
+.suggestion p {
+    margin-top: 60px;
+
+}
+
+.footer h3 {
+    color: fuchsia;
+    margin-top: 37px;
+
+}
+
+.footer h3 span {
+    color: red;
+}
+
+.footer h3 a {
+    text-decoration: none;
+    color: fuchsia;
+}
+
+.footer {
+    width: fit-content;
+    margin: auto;
+}

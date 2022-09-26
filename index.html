@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <h1 class="title">web-3 calculator</h1>
+    <div class="btn">
+        <button type="button" onclick="connect()" id="btn">Connect</button>
+    </div>
+    <div class="container">
+        <input id="input" class="input" type="text">
+        <div class="row">
+            <button class="button">C</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">X</button>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">/</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">+</button>
+        </div>
+        <div class="row">
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">=</button>
+            <button class="button">-</button>
+        </div>
+    </div>
+    <div class="suggestion">
+        <p>
+            Welcome to web-3 calculator <br>
+            suggestion, if you want to use this calculator first please connect to metamask if you do not have metamask
+            please install <span><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en-US"
+                    target="_blank">Metamask</a></span>
+        </p>
+    </div>
+    <div class="footer">
+        <h3>Made by <span>❤</span> <a href="./"> MustDev</a><br>Nagori Mustakim</h3>
+    </div>
+    <script>
+        function isMetamask() {
+            if (typeof window.ethereum !== "undefined") {
+                return true;
+            }
+            return false
+        }
+        async function connect() {
+            if (isMetamask()) {
+
+                let accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                //    accounts = accounts[0]
+                // console.log(accounts)
+
+                if (accounts != "undefined") {
+
+                    document.getElementById("btn").innerHTML = "Connected"
+                    let string = "";
+                    let buttons = document.querySelectorAll('.button');
+                    let input = document.getElementById("input")
+                    // console.log(buttons)
+                    for (item of buttons) {
+                        item.addEventListener('click', (e) => {
+                            buttonText = e.target.innerText;
+                            console.log('Button text is ', buttonText);
+                            if (buttonText == "X") {
+                                buttonText = "*"
+                                string += buttonText
+                                input.value += buttonText;
+
+                            }
+                            else if (buttonText == "C") {
+                                string = ""
+                                input.value = string
+                            }
+                            else if (buttonText == "=") {
+                                input.value = eval(string)
+                            }
+                            else {
+                                string += buttonText
+                                input.value += buttonText;
+                            }
+
+                        })
+                    }
+
+
+
+                }
+                else {
+                    alert("Try again")
+                }
+            }
+
+            else {
+                alert("please install MetaMask")
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
