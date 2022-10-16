@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
     <link rel="stylesheet" href="./index.css">
-    <script src="./index.js"></script>
 </head>
 
 <body>
@@ -15,7 +14,7 @@
     <div class="btn">
         <button type="button" onclick="connect()" id="btn">Connect</button>
     </div>
-    <div class="container">
+    <div class="container" id="warning">
         <input id="input" class="input" type="text">
         <div class="row">
             <button class="button">C</button>
@@ -45,16 +44,18 @@
             <button class="button">-</button>
         </div>
     </div>
+
     <div class="suggestion">
         <p>
             Welcome to web-3 calculator <br>
-            suggestion, if you want to use this calculator first please connect to metamask if you do not have metamask
-            please install <span><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en-US"
+            Note, if you want to use this calculator, first please connect to metamask if you do not have metamask
+            please install <span><a
+                    href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en-US"
                     target="_blank">Metamask</a></span>
         </p>
     </div>
     <div class="footer">
-        <h3>Made by <span>❤</span> <a href="./"> MustDev</a><br>Nagori Mustakim</h3>
+        <h3>Made by <span>❤</span> <a href="https://nagorimustakim.github.io/Mustakim-Portfolio/" target="_blank">Mustakim</a></h3>
     </div>
     <script>
         function isMetamask() {
@@ -67,12 +68,11 @@
             if (isMetamask()) {
 
                 let accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-                //    accounts = accounts[0]
-                // console.log(accounts)
 
                 if (accounts != "undefined") {
 
                     document.getElementById("btn").innerHTML = "Connected"
+                    console.log("metamask is connected")
                     let string = "";
                     let buttons = document.querySelectorAll('.button');
                     let input = document.getElementById("input")
@@ -114,10 +114,8 @@
                 alert("please install MetaMask")
             }
         }
-
-
-
     </script>
+
 </body>
 
 </html>

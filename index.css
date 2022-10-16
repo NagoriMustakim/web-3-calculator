@@ -129,3 +129,52 @@ body {
     width: fit-content;
     margin: auto;
 }
+
+@media (min-width: 412px) and (max-width: 552px) {
+    .btn button {
+        margin-top: 7px;
+        background-color: rgb(166, 166, 234);
+        width: fit-content;
+        font-size: 28px;
+        color: rgb(2, 2, 2);
+        font-weight: bold;
+        border-radius: 13px;
+        padding: 7px;
+        position: absolute;
+        left: 60%;
+    }
+}
+
+@media (min-width: 412px) and (max-width: 552px) {
+    .container {
+        
+        background-color: cyan;
+        margin-top: 70px;
+        border: 2px solid black;
+        border-radius: 13px;
+    }
+
+    .row {
+        margin: 10px;
+        padding: 6px;
+    }
+
+    .row button {
+        padding: 10px;
+        margin: 10px;
+        /* background-color: rgb(163, 166, 169); */
+        /* border: 2px solid black; */
+        border-radius: 10px;
+        cursor: pointer;
+
+    }
+
+    .input {
+        background-color: rgb(158, 179, 230);
+        width: 242px;
+        border-radius: 8px;
+        margin: 7px;
+        height: 20px;
+        font-size: 17px;
+    }
+}
